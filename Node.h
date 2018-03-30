@@ -22,5 +22,7 @@ class Node {
 		Node();	
 		//Parameterized constructor	
 		Node(MesComplexes* complexe);
+			// Copy constructor
+		Node(const Node & node_model);
 	
 };

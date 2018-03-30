@@ -16,5 +16,6 @@ int main(){
     node2.set_obj(&C2);
     std::cout << node2.next()<< std::endl;
     std::cout << node2.obj()<<"	C2 Address	"<< &C2 <<std::endl;
+    Node n3(node2);
 	return 0;
 }
