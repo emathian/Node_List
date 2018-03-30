@@ -20,5 +20,7 @@ class Node {
 
 		//Default constructor
 		Node();	
+		//Parameterized constructor	
+		Node(MesComplexes* complexe);
 	
 };
