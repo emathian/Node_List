@@ -8,13 +8,9 @@ MesComplexes* Node::obj(){
 	return obj_;
 }
 
-void MesComplexes::set_obj(MesComplexes* obj)
+void Node::set_obj(MesComplexes* C)
 {
-	obj_ = obj;
+	obj_ = C;
 }
 
 
-void MesComplexes::set_next(MesComplexes* next)
-{
-	next_ = next;
-}

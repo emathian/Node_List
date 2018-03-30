@@ -2,21 +2,19 @@
 class Node {
 
 	protected  :
-	Node * next_ ; 
-	MesComplexes * obj_ ;
+	Node* next_ ; 
+	MesComplexes* obj_ ;
 	
-	/*
+
 	public:
 		
-		// Getteers
+		// Getters
 		Node* next();
 		MesComplexes* obj();
 
 		
 		// Seters
-		MesComplexes* set_obj(MesComplexes* obj);
-		// nous voulons pouvoir modifier l'objet contenu dans la liste 
-		MesComplexes* set_next(MesComplexes* next);
+		void set_obj(MesComplexes* C);
 		
-	*/
+	
 };
