@@ -1,11 +1,11 @@
 #include "MesComplexes.h"
 class Node {
-		/*
+
 	protected  :
 	Node * next_ ; 
 	MesComplexes * obj_ ;
 	
-
+	/*
 	public:
 		
 		// Getteers
