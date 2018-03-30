@@ -16,5 +16,9 @@ class Node {
 		// Seters
 		void set_obj(MesComplexes* C);
 		
+		//Constructor 
+
+		//Default constructor
+		Node();	
 	
 };
