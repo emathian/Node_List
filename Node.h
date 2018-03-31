@@ -19,7 +19,7 @@ class Node {
 		Node();	
 		//Parameterized constructor	
 		Node(MesComplexes* complexe);
-		
+		Node* prev_; 
 	
 };
 #endif
