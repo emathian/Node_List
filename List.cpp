@@ -52,17 +52,16 @@ void List::Pushback(MesComplexes* add_complex)
 	
 	else
 	{
-	
 		//l'attribut next du noeud != null ptr
 		while((*current).next_ != nullptr)
 		{
 		current = (*current).next_;
 		}
 
-		(*current).next_ = n; 
+		(*current).next_ =  n; 
 		(*n).next_ = nullptr;
 		nb_elts_ ++;
-		//cout << (*n).obj_ << endl;
+	
 
 		
 	} 
@@ -94,3 +93,45 @@ void List::Popback()
 		delete deletion;
 	}
 }
+
+void List::Insert(int pos, MesComplexes* insert_complex)
+{	
+	Node *n= new Node(insert_complex);
+	//Node *before = new Node;
+	
+	//Node *temp = head_
+	// If the list contains any node.
+	if (pos == 0 && head_ == nullptr)
+	{
+		head_ = n ;
+		(*n).next_ = nullptr; 
+		nb_elts_ ++;
+	}
+	
+	else if (pos == 0) // équivalent à ajouter au début
+	{
+		(*n).next_ = head_; 
+		head_ = n;
+		nb_elts_ ++;
+	}
+
+	else //if (pos == nb_elts_ + 1) 
+	{
+		
+			Node *current = head_;
+			int i=0;
+			while (i <pos)
+			{
+			 	current = (*current).next_;
+			 	i++; 
+			}
+			
+			(*n).next_ = (*current).next_;
+			(*current).next_ = n;
+			nb_elts_ ++;
+		
+		
+		
+	}
+}
+
