@@ -82,17 +82,21 @@ void List::Popback()
 	}	
 	else
 	{ 	
-		Node *deletion = head_;
-		
-		while ((*deletion).next_ != nullptr)
+		Node *before = new Node;
+		Node *current = head_;
+		while ((*current).next_ != nullptr)
 		{
-			deletion = (*deletion).next_;	
+			before = current;
+			current = (*current).next_;	
+		
 		}
 
-		(*deletion).next_ = nullptr; 
-	
+		(*before).prev_ = (*current).prev_;
+		(*before).next_ = nullptr;
+		current = (*current).next_;	
+		
 		nb_elts_ --;
-		delete deletion;
+		delete current;
 	}
 }
 
