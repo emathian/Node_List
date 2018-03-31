@@ -103,7 +103,7 @@ void List::Popback()
 void List::Insert(int pos, MesComplexes* insert_complex)
 {	
 	Node *n= new Node(insert_complex);
-	//Node *before = new Node;
+	
 	
 	//Node *temp = head_
 	// If the list contains any node.
@@ -111,19 +111,36 @@ void List::Insert(int pos, MesComplexes* insert_complex)
 	{
 		head_ = n ;
 		(*n).next_ = nullptr; 
+		(*n).prev_ = nullptr; 
 		nb_elts_ ++;
 	}
 	
 	else if (pos == 0) // équivalent à ajouter au début
 	{
 		(*n).next_ = head_; 
+		(*n).prev_ = nullptr; 
 		head_ = n;
 		nb_elts_ ++;
 	}
 
 	else //if (pos == nb_elts_ + 1) 
 	{
-		
+		if (pos >= nb_elts_)
+		{
+			Node *current = head_;
+			while((*current).next_ != nullptr)
+			{
+				current = (*current).next_;
+			}
+
+			(*current).next_ = n; 
+			(*n).next_ = nullptr;
+			(*n).prev_ = current;
+			nb_elts_ ++;
+		}
+
+		else
+		{	
 			Node *current = head_;
 			int i=0;
 			while (i <pos)
@@ -131,11 +148,11 @@ void List::Insert(int pos, MesComplexes* insert_complex)
 			 	current = (*current).next_;
 			 	i++; 
 			}
-			
+			(*n).prev_ = current;
 			(*n).next_ = (*current).next_;
 			(*current).next_ = n;
 			nb_elts_ ++;
-		
+		}
 		
 		
 	}
