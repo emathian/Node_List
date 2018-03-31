@@ -4,7 +4,8 @@
 
 class Node {
 
-	protected  :
+	//protected  :
+	public:
 	Node* next_ ; 
 	MesComplexes* obj_ ;
 	

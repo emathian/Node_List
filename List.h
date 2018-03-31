@@ -21,7 +21,7 @@ class List {
 	List();
 	List(int number_elements);
 	//Method
-	void Pushback(MesComplexes add_complex);
+	void Pushback(MesComplexes* add_complex);
 
 };
 

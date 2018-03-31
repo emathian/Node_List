@@ -33,31 +33,39 @@ List::List(int number_elements)
 	nb_elts_ = number_elements;
 }
 
-//Methods
-void List::Pushback(MesComplexes add_complex)
-{
-	Node * temp = new Node(add_complex); //Create a tempory node
-	
-	Node *current = head_;
-	/*
 
-	if (current == nullptr)
+
+//Methods
+void List::Pushback(MesComplexes* add_complex)
+{
+	Node *n  = new Node(add_complex); //Create a tempory node
+	Node *current = head_;
+
+	if ( head_ == nullptr)
 	{
-		head = temp;
-		nb_elts = 1;
+		head_ = n;
+		current = n;
+		nb_elts_ ++;
+		(*current).next_ = nullptr; 
+
 	}
+	
 	else
 	{
-	*/
-	//l'attribut next du noeud != null ptr
-	while((*current).next_ != nullptr)
-	{
+	
+		//l'attribut next du noeud != null ptr
+		while((*current).next_ != nullptr)
+		{
 		current = (*current).next_;
-		(*current).next_ = temp; 
-		//nb_elts ++;	
-	}
+		}
+
+		(*current).next_ = n; 
+		(*n).next_ = nullptr;
+		nb_elts_ ++;
+		//cout << (*n).obj_ << endl;
+
+		
+	} 
 
 }
-	//IF  il n'y a pas de noeud 
 
-	

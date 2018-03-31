@@ -22,7 +22,12 @@ int main(){
     std::cout << L1.nb_elts()<< std::endl;
     int n = 3;
     List L2(3);
-    
-
+    List L3;
+    L3.Pushback(&C1);
+    std::cout << L3.head()<< std::endl;
+    std::cout << L3.nb_elts()<< std::endl;
+    L3.Pushback(&C2);
+    std::cout << L3.head()<< std::endl;
+    std::cout << L3.nb_elts()<< std::endl;
 	return 0;
 }
