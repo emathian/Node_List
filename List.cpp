@@ -47,6 +47,7 @@ void List::Pushback(MesComplexes* add_complex)
 		current = n;
 		nb_elts_ ++;
 		(*current).next_ = nullptr; 
+		(*current).prev_ = nullptr;
 
 	}
 	
@@ -60,6 +61,7 @@ void List::Pushback(MesComplexes* add_complex)
 
 		(*current).next_ =  n; 
 		(*n).next_ = nullptr;
+		(*n).prev_ = current;
 		nb_elts_ ++;
 	
 
