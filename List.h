@@ -1,4 +1,5 @@
 #include "Node.h"
+
 #ifndef LIST_H
 #define LIST_H
 
@@ -18,7 +19,7 @@ class List {
 	//Constructor
 	//Default Constructor
 	List();
-
+	List(int number_elements);
 
 };
 

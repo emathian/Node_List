@@ -22,3 +22,12 @@ List::List()
 	head_ = nullptr;
 	nb_elts_ = 0;
 }
+
+//Parameterized constructor	
+
+
+List::List(int number_elements) 
+{
+	head_ = nullptr;
+	nb_elts_ = number_elements;
+}

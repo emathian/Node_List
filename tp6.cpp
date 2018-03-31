@@ -20,6 +20,9 @@ int main(){
     List L1;
     std::cout << L1.head()<< std::endl;
     std::cout << L1.nb_elts()<< std::endl;
+    int n = 3;
+    List L2(3);
+
 
 
 	return 0;
