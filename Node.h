@@ -1,4 +1,7 @@
 #include "MesComplexes.h"
+#ifndef NODE_H
+#define NODE_H
+
 class Node {
 
 	protected  :
@@ -26,3 +29,4 @@ class Node {
 		Node(const Node & node_model);
 	
 };
+#endif
