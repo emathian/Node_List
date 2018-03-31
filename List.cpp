@@ -135,5 +135,27 @@ void List::Insert(int pos, MesComplexes* insert_complex)
 		
 		
 	}
+
+
+
 }
+
+	void List::Display()
+	{
+		Node *current = new Node;
+		current = head_;
+		if ((*current).next_ == nullptr)
+		{
+			cout << (*current).obj_ << endl;
+		}
+		else
+		{
+			while ((*current).next_ != nullptr )
+			{
+				std::cout<<(*current).obj_<<std::endl;
+				current=(*current).next_;
+    		}
+    		std::cout<<(*current).obj_<<std::endl;
+   		}
+   	}	
 

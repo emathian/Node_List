@@ -21,6 +21,8 @@ int main(){
     std::cout << L3.nb_elts()<< std::endl;
     L3.Pushback(&C2);
     std::cout << L3.head()<< std::endl;
+    L3.Display();
+    std::cout << &C1 <<"            "<< &C2 << std::endl;
     std::cout << L3.nb_elts()<< std::endl;
     L3.Popback();
     std::cout << L3.head()<< std::endl;
@@ -33,12 +35,8 @@ int main(){
     List L4;
     L4.Insert(ppos , &C1);
     std::cout << L4.nb_elts()<< std::endl;
-    //L3.Pushback(&C2);
-    //L3.Pushback(&C1);
-    //std::cout << L3.nb_elts()<< std::endl;
-    //int pos_m = 2;
-   // L3.Insert(pos_m , &C1);
-    //std::cout << L3.nb_elts()<< std::endl;
+    
+
     
 	return 0;
 }

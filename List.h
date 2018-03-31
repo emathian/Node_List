@@ -24,6 +24,7 @@ class List {
 	void Pushback(MesComplexes* add_complex);
 	void Popback();
 	void Insert(int pos, MesComplexes* insert_complex);
+	void Display();
 
 };
 
