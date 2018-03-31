@@ -4,7 +4,11 @@
 #define LIST_H
 class List {
 
-
+	public:
+	// ATTENTION A CHNAGER
+	//protected  :
+	Node * head_;
+	int  nb_elts_;
 
 };
 
