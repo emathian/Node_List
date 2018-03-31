@@ -5,72 +5,101 @@
 #include "List.h"
 
 int main(){
-	
-    MesComplexes C1(0 , -2);
-    MesComplexes C2;
-    MesComplexes C3 (0,1);
-    MesComplexes C4 (-1,1);
- 
-    // List
-    List L1;
-    std::cout << L1.head()<< std::endl;
-    std::cout << L1.nb_elts()<< std::endl;
-    int n = 3;
-    List L2(3);
-    List L3;
-    std::cout <<"Test Pushback"<< std::endl;
-    L3.Pushback(&C1);
-    std::cout << L3.nb_elts()<< std::endl;
-    L3.Pushback(&C2);
- 
-    L3.Display();
-    std::cout << &C1 <<"            "<< &C2 << std::endl;
-    std::cout << L3.nb_elts()<< std::endl;
+  MesComplexes C1(0 , -2);
+  MesComplexes C2(0 , 0);
+  MesComplexes C3(1 , 0);
+  MesComplexes C4(2 , 0);
+  //Node node(C1) ; //-> Unused since the constructor is qualified as private
+  //Node n4(C4) ; //-> Unused since the constructor is qualified as private
 
 
-    std::cout <<"Test Popback"<< std::endl;
-    L3.Popback();
-    std::cout << L3.nb_elts()<< std::endl;
-    std::cout <<"Display"<< std::endl;
-    L3.Display();
-    std::cout << &C1 <<"       "<< &C2 << std::endl;
-    
-    // Test Insert on a empty class
-    std::cout <<"INSERT AT THE BEGINNING of an empty List "<< std::endl;
-    int ppos= 0 ; 
-    List L4;
-    L4.Insert(ppos , &C1);
-    std::cout << L4.nb_elts()<< std::endl;
-    L4.Display() ;
+  //std::cout << "Adress of complexes number nammed C1 : " << node.obj_ << std::endl ; 
+  //std::cout << "Adress of next element initalize by default as nullptr: " << node.next_ << std::endl ; 
+  // Test of copy constructor
+  MesComplexes copy_C1(C1);
+  //std::cout << "Adress of complexes number copy of C1 : " << node.obj_ << std::endl ; 
+  //std::cout << "Adress of next element initalize by default : " << node.next_ << std::endl ; 
+  // Test default constructor of list
+  List l1;
+  std::cout <<"Address stored in a list's head created by a default constructor : " <<l1.head_ << std::endl ; 
+  std::cout <<"Number of elements in a list created by a default constructor : " <<l1.nb_elts_ << std::endl ; 
+  //Test of parameterized constructor
+  List l2(&C1);
+  
+  std::cout <<"Creation of a list named l2 using parameterized constructor l2 contains the address C1 complexe number "<< std::endl ; 
+  
+  std::cout <<"Number of elements in  l2  : " <<l2.nb_elts_ << std::endl ; 
 
-     std::cout <<"INSERT AT THE BEGINNING "<< std::endl;
-     List L5;
-     L5.Pushback(&C1);
-     L5.Pushback(&C2);
-     L5.Pushback(&C3);
-    std::cout << L5.nb_elts()<< std::endl;
-    L5.Insert(ppos , &C4);
-    std::cout << L5.nb_elts()<< std::endl;
-    L5.Display() ;
-    std::cout <<" C4  "<< &C4<<   "     C1      "<<&C1 <<" C2  "<< &C2 << "  C3   "<< &C3  <<std::endl;
+  std::cout << "Address stored in l2 head_ atribut  : " << std::endl ;
+  l2.Display() ;
+  std::cout <<"Address of complexe number C1  : " <<&C1 << std::endl ;
+
+  // Test of method Pushback
+  l2.Pushback(&C2);
+    std::cout << "We add at the end of l2 the address of a complexe number nammed C2 using Pushback method "<< std::endl ;
+  std::cout << "Number of elements in  l2  : " << l2.nb_elts_ << std::endl ; 
+  std::cout << "Addresses stored in l2 after the addition of C2   : " << std::endl ;
+  l2.Display();
+  std::cout << "Address of C1  : " << &C1 <<"Address of C2  : " << &C2<< std::endl ;
+
+  // Test of method Popback
+  l2.Pushback(&C3);
+  std::cout <<"We add to l2 a complexe number nammed C3 "<< std::endl ;
+  l2.Display();
+  l2.Popback();
+  std::cout <<"We remove the last element (C3) of the list l2 using Popback method "<< std::endl ;
+  std::cout <<"Number of elements in  l2  after deletion of C3 : " << l2.nb_elts_ << std::endl ;
+  std::cout <<"Addresses stored in l2 after the deletion of C3   : " << std::endl ;
+  l2.Display();
+  std::cout <<"Address of C1  : " <<&C1<< "  Address of C2  : " << &C2 << std::endl ;
+
+  l2.Popback();
+  std::cout <<"We remove the last element (C2) of the list l2 using Popback method "<< std::endl ;
+  std::cout <<"Number of elements in  l2  after deletion of C2 : " << l2.nb_elts_ << std::endl ;
+  std::cout <<"Addresses stored in l2 after the deletion of C2   : " << std::endl ;
+  l2.Display();
+  std::cout <<"Address of C1  : " <<&C1<< std::endl ;
 
 
-    std::cout <<"INSERT AT (After) THE  END "<< std::endl;
-    int p2  = 7;
-    L5.Insert(p2 , &C1);
-    std::cout << L5.nb_elts()<< std::endl;
-    L5.Display() ;
-    std::cout <<" C4  "<< &C4<<   "     C1      "<<&C1 <<" C2  "<< &C2 << "  C3   "<< &C3  <<std::endl;
+
+  // Test of metho insert 
+  // If a list doesn't contain element
+  List l3; 
+  int first_pos = 0 ; 
+  l3.Insert(first_pos , &C1);
+  std::cout <<"We create a list named l3, in wich we inset the complexe number C1 "<< std::endl ;
+  std::cout <<"Number of elements in  l3  after insertion of C1 : " << l3.nb_elts_ << std::endl ;
+  std::cout <<"Addresses stored in l3 after the insertion of C1   : "<<std::endl; 
+  l3.Display();
+  std::cout <<"Address of C1  : " <<&C1<< std::endl ;
+
+  // Insertion to the head
+  l3.Insert(first_pos, &C2);
+  std::cout <<"We insert at the begining of l3 a complexe number nammed C2 "<< std::endl ; 
+  std::cout <<"Number of elements in  l3  after insertion of C2 : " << l3.nb_elts_ << std::endl ; 
+  std::cout <<"Address stored in l3 head_ atribut after this insertion  : "<< std::endl ;
+  l3.Display();
+  std::cout <<"Address of C2  : " <<&C2 <<" Address of C1  : " <<&C1<< std::endl ;
+
+  // Insertion to the tail
+  int last_pos = 5 ; 
+  l3.Insert(last_pos, &C3);
+  std::cout <<"We would like to insert to the position 5 a complexe number named C3. "<< std::endl ; 
+  std::cout<< "However the l3 contains only 2 elements, according our programm this action isn't possible. That's why we check if C3 is included to the tail as expected.  " << std::endl ; 
+  std::cout <<"Number of elements in  l3  after insertion of C3 : " << l3.nb_elts_ << std::endl ; 
+  std::cout <<"Address stored in l3 : "<< std::endl ;
+  l3.Display();
+  std::cout <<"Address of C2  : " <<&C2 <<" Address of C1  : " <<&C1<<" Address of C3  : " <<&C3<< std::endl ;
 
 
-     std::cout <<"INSERT AT  THE  END "<< std::endl;
-    int p3  = 2;
-    L5.Insert(p3 , &C1);
-    std::cout << L5.nb_elts()<< std::endl;
-    L5.Display() ;
-    std::cout <<" C4  "<< &C4<<   "     C1      "<<&C1 <<" C2  "<< &C2 << "  C3   "<< &C3 << " C4  "<< &C4 <<std::endl;
-
-
+  //Insertion to the middle
+  int middle_pos = 1; 
+  l3.Insert(middle_pos, &C4);
+  std::cout <<"We insert after l3 second element (C1) a complexe number named C4 "<< std::endl ; 
+  std::cout <<"Number of elements in l3 after insertion of C4 : " << l3.nb_elts_ << std::endl ;
+  std::cout <<"Address stored in l3 : "<< std::endl ; 
+  l3.Display();
+  std::cout <<"Address of C2  : " <<&C2 <<" Address of C1  : " <<&C1<<" Address of C4  : " <<&C4<<" Address of C3  : " <<&C3<< std::endl ;
     
 	return 0;
 }

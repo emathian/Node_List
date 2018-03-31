@@ -27,12 +27,13 @@ List::List()
 //Parameterized constructor	
 
 
-List::List(int number_elements) 
-{
-	head_ = nullptr;
-	nb_elts_ = number_elements;
-}
+List::List(MesComplexes* C) 
+// a changer
 
+{	Node* n = new Node(C);
+	head_ = n;
+	nb_elts_ = 1;
+}
 
 
 //Methods

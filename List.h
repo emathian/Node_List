@@ -19,7 +19,7 @@ class List {
 	//Constructor
 	//Default Constructor
 	List();
-	List(int number_elements);
+	List(MesComplexes* C); 
 	//Method
 	void Pushback(MesComplexes* add_complex);
 	void Popback();
