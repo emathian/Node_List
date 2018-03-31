@@ -67,5 +67,30 @@ void List::Pushback(MesComplexes* add_complex)
 		
 	} 
 
+
+
 }
 
+void List::Popback()
+{
+	
+	if ( head_== nullptr)
+	{
+		nb_elts_ = 0;
+		head_ = nullptr;
+	}	
+	else
+	{ 	
+		Node *deletion = head_;
+		
+		while ((*deletion).next_ != nullptr)
+		{
+			deletion = (*deletion).next_;	
+		}
+
+		(*deletion).next_ = nullptr; 
+	
+		nb_elts_ --;
+		delete deletion;
+	}
+}

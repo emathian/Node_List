@@ -29,5 +29,8 @@ int main(){
     L3.Pushback(&C2);
     std::cout << L3.head()<< std::endl;
     std::cout << L3.nb_elts()<< std::endl;
+    L3.Popback();
+    std::cout << L3.head()<< std::endl;
+    std::cout << L3.nb_elts()<< std::endl;
 	return 0;
 }
