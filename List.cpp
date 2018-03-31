@@ -3,21 +3,25 @@
 using namespace std;
 
 // Getters
-/* This getter allow to users to access to the atribute "head" which is a pointer directed on the 
-first element of my list.*/
+/* This getter allow to users to access to the atribute "head_" which is a pointer directed on the 
+first element of my list. We could also access to the number of elements containing by our list with the 
+attribute nb_elts_.  */
 Node* List::head()
 {
 	return head_;
 } 
-/* This getter allow to users to access to the atribute "obj"*/	
+
 int List::nb_elts()
 {
 	return nb_elts_;
 }	
 
+//Setters 
+/* This class contains any setter, indeed the attributes values depends on list manipulation. Like this users can't 
+change this parameter compute automatically.*/
 
 //Constructor 
-//Default constructor
+
 List::List()
 {
 	head_ = nullptr;
