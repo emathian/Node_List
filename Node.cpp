@@ -18,15 +18,15 @@ The attribute obj_ is initialiazed to zero */
 
 Node::Node()
 {
-    next_ = nullptr;
-    prev_ = nullptr;
-    obj_ = 0;
+  next_ = nullptr;
+  prev_ = nullptr;
+  obj_ = 0;
 }
-// Parameterized constructor	
+
 // Owing to this constructor we could build a Node object passing a complex number's address as parameter. 
 Node::Node(MesComplexes* complexe)
 {
 	prev_ = nullptr;
-    next_ = nullptr;
-    obj_ = complexe;
+  next_ = nullptr;
+  obj_ = complexe;
 }
