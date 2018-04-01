@@ -9,16 +9,7 @@ int main(){
   MesComplexes C2(0 , 0);
   MesComplexes C3(1 , 0);
   MesComplexes C4(2 , 0);
-  //Node node(C1) ; //-> Unused since the constructor is qualified as private
-  //Node n4(C4) ; //-> Unused since the constructor is qualified as private
-
-
-  //std::cout << "Adress of complexes number nammed C1 : " << node.obj_ << std::endl ; 
-  //std::cout << "Adress of next element initalize by default as nullptr: " << node.next_ << std::endl ; 
-  // Test of copy constructor
-  MesComplexes copy_C1(C1);
-  //std::cout << "Adress of complexes number copy of C1 : " << node.obj_ << std::endl ; 
-  //std::cout << "Adress of next element initalize by default : " << node.next_ << std::endl ; 
+  
   // Test default constructor of list
   List l1;
   std::cout <<"Address stored in a list's head created by a default constructor : " <<l1.head_ << std::endl ; 
@@ -73,6 +64,18 @@ int main(){
   l3.Display();
   std::cout <<"Address of C1  : " <<&C1<< std::endl ;
 
+
+  //Insertion in a empty list and pos > 0
+  int mistake_pos = 3;
+  List L;
+  L.Insert(mistake_pos , &C1);
+  std::cout <<"We create a list named L in wich we inset the complexe number C1 at position 3. " <<std::endl;
+  std::cout << "This isn't possible, since the list contain only one element! Nevertheless we'll corrected this mistake."<< std::endl ;
+  std::cout <<"Number of elements in  L  after insertion of C1 : " << l3.nb_elts_ << std::endl ;
+  std::cout <<"Addresses stored in L after the insertion of C1   : "<<std::endl; 
+  L.Display();
+  std::cout <<"Address of C1  : " <<&C1<< std::endl ;
+
   // Insertion to the head
   l3.Insert(first_pos, &C2);
   std::cout <<"We insert at the begining of l3 a complexe number nammed C2 "<< std::endl ; 
@@ -100,6 +103,7 @@ int main(){
   std::cout <<"Address stored in l3 : "<< std::endl ; 
   l3.Display();
   std::cout <<"Address of C2  : " <<&C2 <<" Address of C1  : " <<&C1<<" Address of C4  : " <<&C4<<" Address of C3  : " <<&C3<< std::endl ;
-    
+
+
 	return 0;
 }
