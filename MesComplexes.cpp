@@ -52,7 +52,7 @@ MesComplexes::MesComplexes(const MesComplexes& model)
 
 // Methods
 /* The function Module calcultes the module of a complex number according its real part and its imaginary part.
-The float return by this function is used to defined the attribute Module_ of a complex number.*/
+The float returned by this function is used to define the attribute Module_ of a complex number.*/
 float MesComplexes::Module (float re , float im)
 {
 		float module = sqrt (re*re + im* im);
@@ -61,7 +61,7 @@ float MesComplexes::Module (float re , float im)
 
 
 /* The function Argument calcultes the argument of a complex number according its real part and its imaginary part.
-The float return by this function is used to defined the attribute Arguement_ of a complex number.
+The float returned by this function is used to define the attribute Arguement_ of a complex number.
 If the complex number is setted to zero, that is to say real=0 and imaginary=0, this complex havent't got argument. 
 In this case the function return -2 as default value.
 This value is calculated in radian.
@@ -121,8 +121,7 @@ MesComplexes MesComplexes::Sum (float Re_x , float Im_x)
 	return MesComplexes(Sre, Sim);
 }
 
-/*This function Sum allows to add two complex numbers, by passing as argument a complex number. Sum returns the result 
-as a complex number.*/
+//This function Sum allows to add two complex numbers, by passing as argument a complex number. Sum returns a complex number.
 MesComplexes MesComplexes::Sum(MesComplexes C){
 	float Sre = re_ + C.re();
 	float Sim = im_ + C.im();
@@ -144,8 +143,7 @@ MesComplexes MesComplexes::Subtract (float Re_x , float Im_x)
 	return MesComplexes(Sre, Sim);
 }
 
-/*This function Subtract allows to subtract two complex numbers, by passing as argument a complex number. Subtrract returns the result 
-as a complex number.*/
+/*This function Subtract allows to subtract two complex numbers, by passing as argument a complex number. Subtrract returns a complex number.*/
 MesComplexes MesComplexes::Subtract(MesComplexes C){
 	float Sre = re_ - C.re();
 	float Sim = im_ - C.im();
