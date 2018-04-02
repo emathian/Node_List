@@ -27,7 +27,7 @@ int main(){
 
   // Test of method Pushback
   l2.Pushback(&C2);
-    std::cout << "We add at the end of l2 the address of a complexe number nammed C2 using Pushback method "<< std::endl ;
+  std::cout << "We add at the end of l2 the address of a complexe number nammed C2 using Pushback method "<< std::endl ;
   std::cout << "Number of elements in  l2  : " << l2.nb_elts_ << std::endl ; 
   std::cout << "Addresses stored in l2 after the addition of C2   : " << std::endl ;
   l2.Display();
@@ -64,18 +64,6 @@ int main(){
   l3.Display();
   std::cout <<"Address of C1  : " <<&C1<< std::endl ;
 
-
-  //Insertion in a empty list and pos > 0
-  int mistake_pos = 3;
-  List L;
-  L.Insert(mistake_pos , &C1);
-  std::cout <<"We create a list named L in wich we inset the complexe number C1 at position 3. " <<std::endl;
-  std::cout << "This isn't possible, since the list contain only one element! Nevertheless we'll corrected this mistake."<< std::endl ;
-  std::cout <<"Number of elements in  L  after insertion of C1 : " << l3.nb_elts_ << std::endl ;
-  std::cout <<"Addresses stored in L after the insertion of C1   : "<<std::endl; 
-  L.Display();
-  std::cout <<"Address of C1  : " <<&C1<< std::endl ;
-
   // Insertion to the head
   l3.Insert(first_pos, &C2);
   std::cout <<"We insert at the begining of l3 a complexe number nammed C2 "<< std::endl ; 
@@ -103,7 +91,10 @@ int main(){
   std::cout <<"Address stored in l3 : "<< std::endl ; 
   l3.Display();
   std::cout <<"Address of C2  : " <<&C2 <<" Address of C1  : " <<&C1<<" Address of C4  : " <<&C4<<" Address of C3  : " <<&C3<< std::endl ;
+  
 
-
+  List l4;
+  l4.Pushback(&C1);
+  printf("HEY  HEY" );
 	return 0;
 }

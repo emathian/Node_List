@@ -22,15 +22,16 @@ class MesComplexes {
 	// 	Seters
 	float set_re (float re);
 	float set_im (float im);
+
 	// Constructor
 	MesComplexes();
 	MesComplexes(const MesComplexes& model); 
 	MesComplexes (float re , float im );
 
 	// Fonction
-	MesComplexes Sum(float x);
+	MesComplexes Sum (float Re_x , float Im_x);
 	MesComplexes Sum(MesComplexes C);
-	MesComplexes Substract (float x);
-	MesComplexes Substract(MesComplexes C);
+	MesComplexes Subtract (float Re_x , float Im_x);
+	MesComplexes Subtract(MesComplexes C);
 }; 
 #endif
